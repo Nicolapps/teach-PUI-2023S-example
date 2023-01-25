@@ -1,15 +1,94 @@
+/******************************************************************************
+ * Font
+ ******************************************************************************/
+
+@font-face {
+  font-family: 'Barlow';
+  font-weight: 200;
+  src: url(barlow/Barlow-ExtraLight.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-weight: 300;
+  src: url(barlow/Barlow-Light.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-weight: 400;
+  src: url(barlow/Barlow-Regular.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-weight: 500;
+  src: url(barlow/Barlow-Medium.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-weight: 600;
+  src: url(barlow/Barlow-SemiBold.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-weight: 700;
+  src: url(barlow/Barlow-Bold.ttf);
+  font-display: swap;
+}
+
+/******************************************************************************
+ * Site-wide
+ ******************************************************************************/
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: sans-serif;
+  font-family: Barlow, sans-serif;
+  font-weight: 400;
 }
 
-/* Site-wide elements */
+h1 {
+  font-size: 34px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.button-primary {
+  background: yellow;
+  border: 3px solid black;
+  padding: 10px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: inherit;
+}
+
+.button-tertiary {
+  appearance: none;
+  --webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  text-decoration: underline;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/******************************************************************************
+ * Navigation
+ ******************************************************************************/
 
 .site-logo {
-
   width: 50%;
   max-width: 450px;
   padding: 30px;
@@ -41,34 +120,10 @@ body {
   background-color: yellow;
 }
 
-h1 {
-  font-size: 34px;
-  font-weight: 400;
-  text-align: center;
-  margin-top: 2em;
-  margin-bottom: 1em;
-}
+/******************************************************************************
+ * Home page
+ ******************************************************************************/
 
-.button-primary {
-  background: yellow;
-  border: 3px solid black;
-  padding: 10px 30px;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: inherit;
-}
-
-.button-tertiary {
-  appearance: none;
-  --webkit-appearance: none;
-  background: transparent;
-  border: 0;
-  text-decoration: underline;
-  font-size: 10px;
-  font-weight: bold;
-}
-
-/* Home page */
 
 .product-link {
   width: 280px;
