@@ -82,6 +82,7 @@ h1 {
   text-decoration: underline;
   font-size: 10px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 /******************************************************************************
