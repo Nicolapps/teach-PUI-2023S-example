@@ -58,19 +58,20 @@ body {
 }
 
 h1 {
-  font-size: 34px;
-  font-weight: 400;
+  font-size: 35px;
+  font-weight: 300;
   text-align: center;
-  margin-top: 2em;
+  margin-top: 2.1em;
   margin-bottom: 1em;
 }
 
 .button-primary {
   background: yellow;
   border: 3px solid black;
-  padding: 10px 30px;
-  font-size: 20px;
-  font-weight: bold;
+  padding: 10px 36px;
+  font-size: 25px;
+  margin: 10px;
+  font-weight: 600;
   font-family: inherit;
 }
 
@@ -80,7 +81,7 @@ h1 {
   background: transparent;
   border: 0;
   text-decoration: underline;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -90,26 +91,29 @@ h1 {
  ******************************************************************************/
 
 .site-logo {
-  width: 50%;
-  max-width: 450px;
-  padding: 30px;
+  width: 400px;
+  max-width: 80%;
+  padding: 24px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  box-sizing: content-box;
 }
 
 .site-nav {
   border-top: 5px solid black;
-  padding: 24px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 26px;
+  gap: 18px;
 }
 
 .site-nav a {
   display: inline-block;
   padding: 2px;
 
-  font-size: 22px;
+  font-size: 26px;
   color: inherit;
   text-transform: uppercase;
   text-align: center;
@@ -125,12 +129,11 @@ h1 {
  * Home page
  ******************************************************************************/
 
-
 .product-link {
-  width: 280px;
+  width: 300px;
   margin: 20px auto;
   padding: 10px;
-  font-size: 24px;
+  font-size: 26px;
 }
 
 .product-link:hover {
@@ -148,47 +151,53 @@ h1 {
 }
 
 .product-link h2 {
-  margin-top: .5em;
+  margin-top: .2em;
   margin-bottom: 0;
   font-weight: normal;
   text-decoration: underline;
   font-size: inherit;
 }
 
+.product-link:hover h2 {
+  font-weight: 600;
+}
+
 /******************************************************************************
  * Detail page
  ******************************************************************************/
 
-.product-order-image {
+.product-detail-image {
   display: block;
   width: 100%;
   max-width: 632px;
   border: 3px solid black;
-  margin: 20px auto;
+  margin: 50px auto;
+  margin-bottom: 26px;
 }
 
-.product-order-form {
+.product-detail-form {
   width: 100%;
   max-width: 326px;
   margin: 20px auto;
   font-size: 20px;
 }
 
-.product-order-form p {
-  font-size: 22px;
-  margin-bottom: 48px;
+.product-detail-form p {
+  font-size: 26px;
+  margin-bottom: 64px;
 }
 
-.product-order-form label {
+.product-detail-form label {
   display: block;
-  margin: 20px 0;
+  margin: 36px 0;
+  font-size: 25px;
 }
 
-.product-order-form select {
+.product-detail-form select {
   display: block;
   width: 100%;
   margin: 10px 0;
-  height: 60px;
+  height: 50px;
   border: 3px solid black;
   border-radius: 0;
   appearance: none;
@@ -204,15 +213,15 @@ h1 {
   background-repeat: no-repeat;
 }
 
-.product-order-form-footer {
-  margin: 40px 0;
+.product-detail-form-footer {
+  margin: 130px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
 }
 
-.product-order-price {
+.product-detail-price {
   font-size: 22px;
   font-weight: bold;
 }
@@ -223,37 +232,43 @@ h1 {
 
 .cart-item {
   text-align: center;
-  margin: 36px 0;
-  font-size: 24px;
+  margin: 48px 0;
+  font-size: 26px;
+}
+
+.cart-item + .cart-item {
+  margin-top: 72px;
 }
 
 .cart-item img {
   display: block;
   margin: 0 auto;
+  margin-bottom: -8px;
   width: 120px;
   border: 3px solid black;
 }
 
 .cart-item h2 {
+  margin-top: .4em;
   font-size: inherit;
   font-weight: inherit;
   margin-bottom: 0;
 }
 
 .cart-item-price {
-  font-size: 28px;
+  font-size: 30px;
   margin: 20px 0;
 }
 
 .cart-submit-form {
   max-width: 735px;
-  margin: 20px auto;
-  padding: 36px;
+  margin: 0px auto;
+  padding: 26px;
   border-top: 5px solid black;
   text-align: center;
 }
 
 .cart-total {
-  font-size: 24px;
-  margin-bottom: 12px;
+  font-size: 30px;
+  margin-bottom: 8px;
 }
