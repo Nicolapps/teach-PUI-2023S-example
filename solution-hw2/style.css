@@ -51,14 +51,16 @@
 body {
   font-family: Barlow, sans-serif;
   font-weight: 400;
+  border: 1px solid black;
 }
 
 h1 {
   font-size: 35px;
   font-weight: 300;
-  text-align: center;
-  margin-top: 2.1em;
+  margin-top: -80px;
   margin-bottom: 1em;
+  padding-left: 450px;
+  text-align: left;
 }
 
 .button-primary {
@@ -84,6 +86,10 @@ h1 {
 
 /* Navigation */
 
+.site-header {
+  display: flex;
+}
+
 .site-logo {
   width: 400px;
   max-width: 80%;
@@ -94,13 +100,15 @@ h1 {
 }
 
 .site-nav {
-  border-top: 5px solid black;
+  height: 132px;
+  border-bottom: 5px solid black;
   padding: 12px;
+  padding-right: 60px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  gap: 18px;
+  gap: 80px;
+  flex: 1;
 }
 
 .site-nav a {
@@ -120,9 +128,17 @@ h1 {
 
 /* Home page */
 
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px 44px;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
 .product-link {
   width: 300px;
-  margin: 20px auto;
   padding: 10px;
   font-size: 26px;
 }
@@ -154,6 +170,10 @@ h1 {
 }
 
 /* Detail page */
+
+.product {
+  display: flex;
+}
 
 .product-detail-image {
   display: block;
@@ -218,14 +238,16 @@ h1 {
 
 /* Cart page */
 
-.cart-item {
-  text-align: center;
-  margin: 48px 0;
-  font-size: 26px;
+.cart {
+  max-width: 750px;
+  margin-left: auto;
+  margin-top: 100px;
 }
 
-.cart-item + .cart-item {
-  margin-top: 72px;
+.cart-item {
+  display: flex;
+  margin: 24px 0;
+  font-size: 26px;
 }
 
 .cart-item img {
@@ -243,20 +265,31 @@ h1 {
   margin-bottom: 0;
 }
 
-.cart-item-price {
-  font-size: 30px;
-  margin: 20px 0;
+.cart-item-contents {
+  flex: 1;
+  padding: 0 40px;
 }
 
-.cart-submit-form {
-  max-width: 735px;
-  margin: 0 auto;
-  padding: 26px;
-  border-top: 5px solid black;
-  text-align: center;
+.cart-item-price,
+.cart-total {
+  font-size: 30px;
+  margin: 20px 0;
+  align-self: center;
+  padding-right: 60px;
 }
 
 .cart-total {
-  font-size: 30px;
-  margin-bottom: 8px;
+  display: flex;
+  padding-block: 20px;
+  margin: 0 auto;
+  padding-left: 160px;
+  border-top: 5px solid black;
+  justify-content: space-between;
+}
+
+.cart-submit-form {
+  padding-top: 8px;
+  padding-bottom: 16px;
+  padding-right: 50px;
+  text-align: right;
 }
