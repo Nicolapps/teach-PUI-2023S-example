@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Original cinnamon roll — Bun Bun Bake Shop</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <a href="index.html">
+      <img class="site-logo" src="logo/logo-01.svg" alt="Bun Bun Bake Shop Logo">
+    </a>
+    <nav class="site-nav">
+      <a class="active" href="index.html">
+        Products
+      </a>
+      <a href="cart.html">
+        Cart
+      </a>
+    </nav>
+  </header>
+  <main>
+    <h1>Original cinnamon roll</h1>
+
+    <div class="product">
+      <img
+        class="product-detail-image"
+        src="products/original-cinnamon-roll.jpg"
+        alt="A cinnamon roll covered with glaze on a plate, next to two quills of cinnamon.">
+
+      <form class="product-detail-form" method="post" action="product.html">
+        <p>
+          Customize our delicious, hand-made cinnamon roll to your liking!
+        </p>
+
+        <label>
+          Glazing:
+          <select>
+            <option>Keep original</option>
+            <option>Sugar milk</option>
+            <option>Vanilla milk</option>
+            <option>Double chocolate</option>
+          </select>
+        </label>
+
+        <label>
+          Pack size:
+          <select>
+            <option>1</option>
+            <option>3</option>
+            <option>6</option>
+            <option>12</option>
+          </select>
+        </label>
+
+        <footer class="product-detail-form-footer">
+          <span class="product-detail-price">$&nbsp;2.49</span>
+          <button class="button-primary" type="Submit">Add to Cart</button>
+        </footer>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>

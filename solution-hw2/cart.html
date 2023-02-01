@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — Bun Bun Bake Shop</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <a href="index.html">
+      <img class="site-logo" src="logo/logo-01.svg" alt="Bun Bun Bake Shop Logo">
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">
+        Products
+      </a>
+      <a class="active" href="cart.html">
+        Cart
+      </a>
+    </nav>
+  </header>
+  <main>
+    <h1>Shopping Cart</h1>
+
+    <article class="cart-item">
+      <img src="products/original-cinnamon-roll.jpg" alt="">
+      <button class="button-tertiary">Remove</button>
+    
+      <h2>Original Cinnamon Roll</h2>
+      <div class="cart-detail">
+        Glazing: Keep original
+      </div>
+      <div class="cart-detail">
+        Pack Size: 1
+      </div>
+    
+      <div class="cart-item-price">
+        $&nbsp;2.49
+      </div>
+    </article>
+    <article class="cart-item">
+      <img src="products/double-chocolate-cinnamon-roll.jpg" alt="">
+      <button class="button-tertiary">Remove</button>
+    
+      <h2>Double Chocolate Cinnamon Roll</h2>
+      <div class="cart-detail">
+        Glazing: Sugar milk
+      </div>
+      <div class="cart-detail">
+        Pack Size: 6
+      </div>
+    
+      <div class="cart-item-price">
+        $&nbsp;27.45
+      </div>
+    </article>
+
+    <form class="cart-submit-form" method="post" action="cart.html">
+      <div class="cart-total">
+        Total: $&nbsp;29.94
+      </div>
+
+      <button class="button-primary" type="submit">
+        Checkout
+      </button>
+    </form>
+  </main>
+</body>
+
+</html>
