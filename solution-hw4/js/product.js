@@ -42,8 +42,8 @@ if (rolls.hasOwnProperty(rollType)) {
 
   basePrice = roll.basePrice;
 
-  document.title = `${rollType} cinnamon roll — Bun Bun Bake Shop`;
-  document.querySelector('.product-name').innerText = `${rollType} cinnamon roll`;
+  document.title = `${rollType} Cinnamon Roll — Bun Bun Bake Shop`;
+  document.querySelector('.product-name').innerText = `${rollType} Cinnamon Roll`;
   document.querySelector('.product-detail-image').setAttribute('src', `products/${roll.imageFile}`);
 
   populate(glazingSelect, glazingOptions);
