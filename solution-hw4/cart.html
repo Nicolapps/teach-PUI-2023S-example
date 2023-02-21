@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — Bun Bun Bake Shop</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a href="index.html">
+      <img class="site-logo" src="logo/logo-01.svg" alt="Bun Bun Bake Shop Logo">
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">
+        Products
+      </a>
+      <a class="active" href="cart.html">
+        Cart
+      </a>
+    </nav>
+  </header>
+  <main>
+    <h1>Shopping Cart</h1>
+
+    <div class="cart">
+      <article class="cart-item">
+        <div class="cart-item-thumbnail">
+          <img src="products/original-cinnamon-roll.jpg" alt="">
+          <button class="button-tertiary">Remove</button>
+        </div>
+      
+        <div class="cart-item-contents">
+          <h2>Original Cinnamon Roll</h2>
+          <div class="cart-detail">
+            Glazing: Keep original
+          </div>
+          <div class="cart-detail">
+            Pack Size: 1
+          </div>
+        </div>
+        <div class="cart-item-price">
+          $&nbsp;2.49
+        </div>
+      </article>
+      <article class="cart-item">
+        <div class="cart-item-thumbnail">
+          <img src="products/double-chocolate-cinnamon-roll.jpg" alt="">
+          <button class="button-tertiary">Remove</button>
+        </div>
+      
+        <div class="cart-item-contents">
+          <h2>Double Chocolate Cinnamon Roll</h2>
+          <div class="cart-detail">
+            Glazing: Sugar milk
+          </div>
+          <div class="cart-detail">
+            Pack Size: 6
+          </div>
+        </div>
+        <div class="cart-item-price">
+          $&nbsp;27.45
+        </div>
+      </article>
+
+      <div class="cart-total">
+        <div class="cart-total-label">
+          Total
+        </div>
+        <div class="cart-total-value">
+          $&nbsp;29.94
+        </div>
+      </div>
+      
+      <form class="cart-submit-form" method="post" action="cart.html">
+        <button class="button-primary" type="submit">
+          Checkout
+        </button>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>
