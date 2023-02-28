@@ -2,29 +2,6 @@
  * Manages the price on the product page.
  */
 
-const glazingOptions = [
-  { name: 'Keep original',    extraCharge: 0.00 },
-  { name: 'Sugar milk',       extraCharge: 0.00 },
-  { name: 'Vanilla milk',     extraCharge: 0.50 },
-  { name: 'Double chocolate', extraCharge: 1.50 },
-];
-
-const packSizes = [
-  { name:  1, priceMultiplier:  1 },
-  { name:  3, priceMultiplier:  3 },
-  { name:  6, priceMultiplier:  5 },
-  { name: 12, priceMultiplier: 10 },
-];
-
-class Roll {
-   constructor(rollType, rollGlazing, packSize, basePrice) {
-    this.type = rollType;
-    this.glazing = rollGlazing;
-    this.size = packSize;
-    this.basePrice = basePrice;
-  }
-}
-
 // Order controls
 const glazingSelect = document.querySelector('.glazing-select');
 const sizeSelect = document.querySelector('.size-select');
@@ -65,14 +42,10 @@ if (rolls.hasOwnProperty(rollType)) {
  * Updates the displayed product price.
  */
 function updatePrice() {
-  const selectedGlazingIndex = glazingSelect.selectedIndex;
-  const selectedPackSize = sizeSelect.selectedIndex;
-
-  const selectedGlazing = glazingOptions[selectedGlazingIndex];
-  const selectedSize = packSizes[selectedPackSize];
-  const price = (basePrice + selectedGlazing.extraCharge) * selectedSize.priceMultiplier;
-  const roundedPrice = Math.round(price * 100) / 100;
-  priceDisplay.innerText = `$ ${roundedPrice}`;
+  const selectedGlazing = glazingOptions[glazingSelect.selectedIndex];
+  const selectedSize = packSizes[sizeSelect.selectedIndex];
+  const roll = new Roll(rollType, selectedGlazing, selectedSize, basePrice);
+  priceDisplay.innerText = `$ ${roll.totalPrice.toFixed(2)}`;
 }
 
 /**
