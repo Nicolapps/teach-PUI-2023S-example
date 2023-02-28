@@ -14,59 +14,62 @@ function getPackSize(quantity) {
   return res;
 }
 
-const cart = [
+let cart = [
   new Roll('Original', getGlazing('Sugar milk'), getPackSize(1)),
   new Roll('Walnut', getGlazing('Vanilla milk'), getPackSize(12)),
   new Roll('Raisin', getGlazing('Sugar milk'), getPackSize(3)),
   new Roll('Apple', getGlazing('Keep original'), getPackSize(3)),
 ];
 
+function appendItem(item, itemIndex) {
+  const thumbnailImg = document.createElement('img');
+  thumbnailImg.setAttribute('src', item.imageUrl);
+
+  const removeButton = document.createElement('button');
+  removeButton.classList.add('button-tertiary');
+  removeButton.innerText = 'Remove';
+  removeButton.addEventListener('click', () => {
+    cart = cart.filter(elem => elem !== item);
+    updateCart();
+  });
+
+  const title = document.createElement('h2');
+  title.innerText = item.title;
+
+  const glazingDetail = document.createElement('div');
+  glazingDetail.innerText = `Glazing: ${item.glazing.name}`;
+  glazingDetail.classList.add('cart-detail');
+
+  const sizeDetail = document.createElement('div');
+  console.log(item, item.size);
+  sizeDetail.innerText = `Pack Size: ${item.size.name}`;
+  sizeDetail.classList.add('cart-detail');
+
+  const price = document.createElement('div');
+  price.classList.add('cart-item-price');
+  price.innerText = `$ ${item.totalPrice.toFixed(2)}`;
+
+  const thumbnail = document.createElement('div');
+  thumbnail.classList.add('cart-item-thumbnail');
+  thumbnail.replaceChildren(thumbnailImg, removeButton);
+
+  const contents = document.createElement('div');
+  contents.classList.add('cart-item-contents');
+  contents.replaceChildren(title, glazingDetail, sizeDetail);
+
+  const el = document.createElement('article');
+  el.classList.add('cart-item');
+  el.replaceChildren(thumbnail, contents, price);
+  
+  document.querySelector('.cart-contents').appendChild(el);
+}
+
 /**
  * Updates the items displayed on the card
  */
 function updateCart() {
-  const elements = cart.map((item, itemIndex) => {
-    const thumbnailImg = document.createElement('img');
-    thumbnailImg.setAttribute('src', item.imageUrl);
-
-    const removeButton = document.createElement('button');
-    removeButton.classList.add('button-tertiary');
-    removeButton.innerText = 'Remove';
-    removeButton.addEventListener('click', () => {
-      cart.splice(itemIndex, 1);
-      updateCart();
-    });
-
-    const title = document.createElement('h2');
-    title.innerText = item.title;
-
-    const glazingDetail = document.createElement('div');
-    glazingDetail.innerText = `Glazing: ${item.glazing.name}`;
-    glazingDetail.classList.add('cart-detail');
-
-    const sizeDetail = document.createElement('div');
-    console.log(item, item.size);
-    sizeDetail.innerText = `Pack Size: ${item.size.name}`;
-    sizeDetail.classList.add('cart-detail');
-
-    const price = document.createElement('div');
-    price.classList.add('cart-item-price');
-    price.innerText = `$ ${item.totalPrice.toFixed(2)}`;
-
-    const thumbnail = document.createElement('div');
-    thumbnail.classList.add('cart-item-thumbnail');
-    thumbnail.replaceChildren(thumbnailImg, removeButton);
-
-    const contents = document.createElement('div');
-    contents.classList.add('cart-item-contents');
-    contents.replaceChildren(title, glazingDetail, sizeDetail);
-
-    const el = document.createElement('article');
-    el.classList.add('cart-item');
-    el.replaceChildren(thumbnail, contents, price);
-    return el;
-  });
-  document.querySelector('.cart-contents').replaceChildren(...elements);
+  document.querySelector('.cart-contents').replaceChildren();
+  cart.forEach(appendItem);
 
   const totalPrice = cart.map(item => item.totalPrice).reduce((a, b) => a + b, 0);
   document.querySelector('.cart-total-value').innerText = `$ ${totalPrice.toFixed(2)}`;
