@@ -40,3 +40,15 @@ class Roll {
     return `${this.type} Cinnamon Roll`;
   }
 }
+
+/**
+ * retrieves the cart from the local storage.
+ * 
+ * We make sure that the items in the returned array are actual Roll instances,
+ * not simple JavaScript objects. This allows us to use the getters defined
+ * in Roll.
+ */
+function retrieveCart() {
+  const cartObjects = JSON.parse(localStorage.getItem('cart')) ?? [];
+  return cartObjects.map(({ type, rollGlazingStr, packSize }) => new Roll(type, rollGlazingStr, packSize));
+}

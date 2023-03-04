@@ -8,7 +8,6 @@ const sizeSelect = document.querySelector('.size-select');
 const priceDisplay = document.querySelector('.product-detail-price');
 
 // Load the roll from the URL parameters
-const cart = [];
 let basePrice;
 
 const queryString = window.location.search;
@@ -70,6 +69,8 @@ function addToCart() {
   const selectedGlazing = glazingOptions[glazingSelect.selectedIndex];
   const selectedSize = packSizes[sizeSelect.selectedIndex];
 
+  const cart = retrieveCart();
   cart.push(new Roll(rollType, selectedGlazing.name, selectedSize.name, basePrice));
+  localStorage.setItem('cart', JSON.stringify(cart));
   console.log(cart);
 }

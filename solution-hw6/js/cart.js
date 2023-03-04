@@ -14,12 +14,7 @@ function getPackSize(quantity) {
   return res;
 }
 
-let cart = [
-  new Roll('Original', 'Sugar milk', 1),
-  new Roll('Walnut', 'Vanilla milk', 12),
-  new Roll('Raisin', 'Sugar milk', 3),
-  new Roll('Apple', 'Keep original', 3),
-];
+let cart = retrieveCart();
 
 function appendItem(item, itemIndex) {
   const thumbnailImg = document.createElement('img');
@@ -30,6 +25,8 @@ function appendItem(item, itemIndex) {
   removeButton.innerText = 'Remove';
   removeButton.addEventListener('click', () => {
     cart = cart.filter(elem => elem !== item);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    console.log(cart);
     updateCart();
   });
 
