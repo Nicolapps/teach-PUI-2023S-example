@@ -44,7 +44,7 @@ if (rolls.hasOwnProperty(rollType)) {
 function updatePrice() {
   const selectedGlazing = glazingOptions[glazingSelect.selectedIndex];
   const selectedSize = packSizes[sizeSelect.selectedIndex];
-  const roll = new Roll(rollType, selectedGlazing, selectedSize, basePrice);
+  const roll = new Roll(rollType, selectedGlazing.name, selectedSize.name, basePrice);
   priceDisplay.innerText = `$ ${roll.totalPrice.toFixed(2)}`;
 }
 
@@ -70,6 +70,6 @@ function addToCart() {
   const selectedGlazing = glazingOptions[glazingSelect.selectedIndex];
   const selectedSize = packSizes[sizeSelect.selectedIndex];
 
-  cart.push(new Roll(rollType, selectedGlazing, selectedSize, basePrice));
+  cart.push(new Roll(rollType, selectedGlazing.name, selectedSize.name, basePrice));
   console.log(cart);
 }

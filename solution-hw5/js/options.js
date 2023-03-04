@@ -13,11 +13,19 @@ const packSizes = [
 ];
 
 class Roll {
-  constructor(rollType, rollGlazing, packSize, basePrice) {
+  constructor(rollType, rollGlazingStr, packSize, basePrice) {
     this.type = rollType;
-    this.glazing = rollGlazing;
-    this.size = packSize;
+    this.rollGlazingStr = rollGlazingStr;
+    this.packSize = packSize;
     this.basePrice = basePrice ?? rolls[rollType].basePrice;
+  }
+
+  get glazing() {
+    return glazingOptions.find(option => option.name === this.rollGlazingStr);
+  }
+
+  get size() {
+    return packSizes.find(option => option.name === this.packSize);
   }
 
   get totalPrice() {

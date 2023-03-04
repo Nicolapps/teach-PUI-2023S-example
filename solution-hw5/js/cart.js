@@ -15,10 +15,10 @@ function getPackSize(quantity) {
 }
 
 let cart = [
-  new Roll('Original', getGlazing('Sugar milk'), getPackSize(1)),
-  new Roll('Walnut', getGlazing('Vanilla milk'), getPackSize(12)),
-  new Roll('Raisin', getGlazing('Sugar milk'), getPackSize(3)),
-  new Roll('Apple', getGlazing('Keep original'), getPackSize(3)),
+  new Roll('Original', 'Sugar milk', 1),
+  new Roll('Walnut', 'Vanilla milk', 12),
+  new Roll('Raisin', 'Sugar milk', 3),
+  new Roll('Apple', 'Keep original', 3),
 ];
 
 function appendItem(item, itemIndex) {
@@ -41,7 +41,6 @@ function appendItem(item, itemIndex) {
   glazingDetail.classList.add('cart-detail');
 
   const sizeDetail = document.createElement('div');
-  console.log(item, item.size);
   sizeDetail.innerText = `Pack Size: ${item.size.name}`;
   sizeDetail.classList.add('cart-detail');
 
