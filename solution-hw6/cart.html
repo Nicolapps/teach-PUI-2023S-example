@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — Bun Bun Bake Shop</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a href="index.html">
+      <img class="site-logo" src="logo/logo-01.svg" alt="Bun Bun Bake Shop Logo">
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">
+        Products
+      </a>
+      <a class="active" href="cart.html">
+        Cart
+      </a>
+    </nav>
+  </header>
+  <main>
+    <h1>Shopping Cart</h1>
+
+    <div class="cart">
+      <div class="cart-contents"></div>
+
+      <div class="cart-total">
+        <div class="cart-total-label">
+          Total
+        </div>
+        <div class="cart-total-value">
+          $&nbsp;0.00
+        </div>
+      </div>
+      
+      <form class="cart-submit-form" method="post" action="cart.html">
+        <button class="button-primary" type="submit">
+          Checkout
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <script src="js/rollsData.js"></script>
+  <script src="js/options.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+
+</html>
